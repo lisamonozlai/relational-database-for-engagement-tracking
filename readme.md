@@ -1,4 +1,4 @@
-# Designing a Lightweight, Interactive, Relational Database
+# Designing an Interactive, Relational Database with SQL, Python, Streamlit & GenAI
 ##### Author: [Lisa Monozlai](https://www.linkedin.com/in/lisamonozlai/)
 ---
 
@@ -16,7 +16,7 @@ This shows how lightweight code deployed to [Streamlit](https://streamlit.io/) c
 
 This project demonstrates how a small team can move from multiple spreadsheets to a simple relational database with an interactive interface. The goal is to show what becomes possible when program data is stored in a structured format rather than scattered across files. All data in this demo is **fictional** and exists only to illustrate how structured fields, controlled vocabularies, and relational storage work in practice.
 
-You will also find in this project an approach to collecting demographic data that has been adapted from "**[Candid's Philanthropy Classification System](https://taxonomy.candid.org/populations)**."
+You will also find in this project an approach to collecting demographic data that has been adapted from **[Candid's Philanthropy Classification System](https://taxonomy.candid.org/populations)**.
 
 ---
 
