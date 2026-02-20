@@ -263,7 +263,7 @@ if page == "About":
         For a deeper explanation of the project structure, data model, and design choices,
         you can read the full project README on GitHub:
 
-        **[View the README](https://github.com/yourusername/yourrepo)**
+        **[View the README](https://github.com/lisamonozlai/grant-program-database-demo)**
 
         ---
         """

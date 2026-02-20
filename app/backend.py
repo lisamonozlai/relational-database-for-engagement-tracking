@@ -356,10 +356,10 @@ def load_program_to_db(
 
 
 def initialize_database(
-    db_path: str = "database/database.db",
-    program1_excel: str = "data_sources/program_data_1.xlsx",
+    db_path: str = os.path.join(ROOT_DIR, "database", "database.db"),
+    program1_excel: str = os.path.join(ROOT_DIR, "data_sources", "program_data_1.xlsx"),
     program1_sheet: str = "program_data_1",
-    program2_excel: str = "data_sources/program_data_2.xlsx",
+    program2_excel: str = os.path.join(ROOT_DIR, "data_sources", "program_data_2.xlsx"),
     program2_sheet: str = "program_data_2"
 ) -> dict:
     """

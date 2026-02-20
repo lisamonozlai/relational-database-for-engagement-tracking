@@ -6,7 +6,7 @@
 
 A live version of the interactive database is available here:
 
-**[View the demo](https://your-demo-link-here.com)**
+**[View the demo](https://grant-program-database-demo.streamlit.app/)**
 
 This shows how lightweight code deployed to [Streamlit](https://streamlit.io/) can help non-technical users browse, filter, update, and visualize program data.
 
