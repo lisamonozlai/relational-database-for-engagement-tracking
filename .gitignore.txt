@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Streamlit cache
+.streamlit/
+
+# SQLite journal files (auto-generated)
+*.db-journal
+
+# OS-specific clutter
+.DS_Store
+Thumbs.db
