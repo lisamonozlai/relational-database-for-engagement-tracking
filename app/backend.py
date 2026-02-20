@@ -28,6 +28,9 @@ import pandas as pd     # Tabular data handling
 import os               # File existence checks
 import datetime         # Simple timestamped logging
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(BASE_DIR)
+
 
 # VOCABULARIES
 # ---------------------------------------------------------------
