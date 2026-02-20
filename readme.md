@@ -1,6 +1,5 @@
-# Grant Program Data System  
-### Designing an Interactive, Relational Database with SQL, Python, Streamlit, and GenAI
-
+# Designing a Lightweight, Interactive, Relational Database
+##### Author: [Lisa Monozlai](https://www.linkedin.com/in/lisamonozlai/)
 ---
 
 ## How to View the Demo
@@ -9,7 +8,7 @@ A live version of the interactive database is available here:
 
 **[View the demo](https://your-demo-link-here.com)**
 
-This shows how lightweight code deployed to [Streamlit](https://streamlit.io/) can help non technical users browse, filter, update, and visualize program data.
+This shows how lightweight code deployed to [Streamlit](https://streamlit.io/) can help non-technical users browse, filter, update, and visualize program data.
 
 ---
 
