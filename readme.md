@@ -1,98 +1,127 @@
-# Designing an Interactive, Relational Database with SQL, Python, Streamlit & GenAI
+# Building a Lightweight Relational Engagement Tracker with Python, SQL and Streamlit  
 ##### Author: [Lisa Monozlai](https://www.linkedin.com/in/lisamonozlai/)
----
-
-## How to View the Demo
-
-A live version of the interactive database is available here:
-
-**[View the demo](https://grant-program-database-demo.streamlit.app/)**
-
-This shows how lightweight code deployed to [Streamlit](https://streamlit.io/) can help non-technical users browse, filter, update, and visualize program data.
-
 ---
 
 ## About
 
-This project demonstrates how a small team can move from multiple spreadsheets to a simple relational database with an interactive interface. The goal is to show what becomes possible when program data is stored in a structured format rather than scattered across files. All data in this demo is **fictional** and exists only to illustrate how structured fields, controlled vocabularies, and relational storage work in practice.
+This project demonstrates how organizations can move from scattered spreadsheets to a lightweight relational database. It shows what becomes possible when engagement data is stored in a structured, queryable format rather than siloed across files.
 
-You will also find in this project an approach to collecting demographic data that has been adapted from **[Candid's Philanthropy Classification System](https://taxonomy.candid.org/populations)**.
+All data in this demo is fictional and is used to illustrate:
+
+- how relational storage improves consistency  
+- how controlled vocabularies reduce ambiguity  
+- how a simple UI makes structured data accessible to non technical users  
+- how multi year engagement patterns emerge once data is unified  
+
+---
+
+## Live Demo
+
+→ **[Click to View](https://tbd.streamlit.app/)**
+
+The interface allows users to browse, filter, update, and visualize multi year engagement data without risking accidental edits to the original files.
 
 ---
 
 ## Challenge
 
-A hypothetical grantmaking organization wants to keep track of its grants and grantees. It runs multiple programs, and data for those programs lives in separate spreadsheets:
+To ground the demo, it uses a fictional scenario where a team wants to understand which organizations they engage with each year. Their data lives in three separate spreadsheets:
 
-- `program_data_1.xlsx` 
-- `program_data_2.xlsx` 
+- `engagement_data_2022.xlsx`  
+- `engagement_data_2023.xlsx`  
+- `engagement_data_2024.xlsx`  
 
-The team needs a simple, lightweight way to explore the data and to add, edit, or delete grantees. They do not have dedicated IT staff or money for expensive software. They need something using tools that are free, accessible, and easy to learn.
+Although the files share similar fields, the team cannot easily:
+
+- view all years together  
+- filter by industry, region, or organization size  
+- compare engagement patterns across years  
+- update records without editing spreadsheets  
+- maintain consistent vocabularies  
+
+They need a simple, low cost, low maintenance solution that works with familiar tools.
 
 ---
 
 ## Solution
 
-#### Tools Used and Why
+### Tools Used
 
-- **SQL** to store data in a structured format that supports reliable queries.  
-- **Python** to connect spreadsheets, the database, and the interface.  
-- **SQLite** as a lightweight, file based database suitable for small teams.  
-- **Streamlit** to create a simple web interface that non technical users can navigate.  
-- **Generative AI** (for example, Microsoft Copilot in an MS365 environment) to accelerate development by generating scaffolding, boilerplate code, and documentation without exposing any sensitive data.
+- **Python** for cleaning, merging, and standardizing multi year data  
+- **SQLite** as a lightweight relational database  
+- **SQL** for structured storage and reliable queries  
+- **Streamlit** for an intuitive, non technical interface  
+- **Generative AI** (for example, Microsoft Copilot) to accelerate scaffolding and documentation  
 
-#### Backend
+### Backend
 
-Using Python in [VS Code](https://code.visualstudio.com/), the backend loads two separate spreadsheets into a single SQLite table. It links records using the primary key Unique ID, tags each record with the program name, and exposes functions for adding, editing, deleting, searching, filtering, and summarizing records. This unified structure reduces duplication and makes cross program comparisons immediate.
+The backend loads three Excel files, standardizes their fields, and merges them into a single relational table. Each record is tagged with an `engagement_year`, which enables multi year comparisons.
 
-#### Frontend
+It provides functions for:
 
-The frontend is also written in Python and deployed through Streamlit. It provides forms, filters, tables, and charts that allow non technical users to interact with the database without touching SQL or the underlying files. This prevents inaccurate or inconsistent data from being introduced and skewing results. 
+- adding, editing, and deleting records  
+- keyword search  
+- structured filtering  
+- generating summary tables  
 
-#### Role of Generative AI
+This structure ensures consistency and reduces the risk of data corruption.
 
-A secure generative AI tool can help a non-technical team set up this system quickly. AI can generate the initial database structure, boilerplate functions, and UI scaffolding. Because only the structure of the data model is shared, and no identifying information is provided, this is a safe and appropriate use of AI for accelerating development.
+### Frontend
+
+The Streamlit frontend includes:
+
+- a directory of all organizations  
+- keyword search and advanced filters  
+- forms for adding, editing, and deleting records  
+- charts showing engagement patterns by industry and geography  
+- a data dictionary that documents each field and vocabulary  
+
+The UI is intentionally simple so non technical users can interact with the data without touching SQL or the underlying files.
+
+### Role of Generative AI
+
+Generative AI supports rapid development by generating boilerplate code, documentation, and UI scaffolding. Because only the structure of the data model is shared and no identifying information is provided, this is a safe and appropriate use of AI.
 
 ---
 
 ## Results
 
-With this system, the team can use the interface to:
+With this system, users can:
 
-- view a directory of all grantees  
-- run keyword searches  
-- apply structured filters  
-- add, edit, and delete records through forms  
-- view charts summarizing funding by mission, region, and population served  
-- reference a data dictionary that explains each field  
+- browse all organizations engaged across 2022 to 2024  
+- filter by industry, region, geography, or employee size  
+- run keyword searches across names and descriptions  
+- add, edit, and delete records through controlled forms  
+- view charts that summarize engagement patterns  
+- reference a clear data dictionary  
 
-The structured database also allows the team to answer common program questions, such as:
+The structured database also supports common operational questions, such as:
 
-- How does funding distribution differ across the two programs?
-- Which missions receive the most investment?  
-- Which populations or regions are most frequently served?  
-- Are there gaps in the types of organizations being supported?  
-
-These insights come from the structure, not from complex analytics. Even a minimal relational setup can support meaningful decision-making.
+- Which industries do we engage with most often?
+- How does engagement vary by region or geography?  
+- Are we reaching organizations of different sizes?  
+- Which organizations appear across multiple years?  
 
 ---
 
 ## Considerations and Constraints
 
-This project is a demonstration. It is not intended for sensitive data or enterprise scale use.
+This project is a demonstration and represents one approach to working with structured data. It is not intended for sensitive data or enterprise scale use.
 
-**SQLite** is suitable for small datasets and single user access. It is not designed for concurrent editing or regulated data.  
-**Streamlit** is ideal for prototypes and internal tools. It does not provide authentication or role based permissions.  
-**Generative AI** should not be used to process sensitive program data. It is appropriate for generating structure and scaffolding.
+- **SQLite** is suitable for small datasets and single user access, but not concurrent editing  
+- **Streamlit** is ideal for prototypes and internal tools, but does not include authentication  
+- **Generative AI** should not be used to process sensitive organizational data  
 
-If an organization wanted to adopt this pattern for production, they would likely use:
+A production ready version might use:
 
-- **PostgreSQL** or **MySQL** for the database  
-- **Django**, **FastAPI**, or **Flask** for backend logic  
-- A frontend framework with authentication  
-- Cloud hosting with proper security controls  
+- **PostgreSQL**, **MySQL**, **FastAPI**, or similar tools for teams with technical capacity  
+- **MS SharePoint with Power Apps** or **Google AppSheet** for low code environments  
+- A frontend with authentication and role based permissions  
+- Cloud hosting with appropriate security controls  
 
-The pattern remains the same. Only the tools change to meet production requirements.
+The architectural pattern remains the same. Only the tools change.
+
+---
 
 ## License
 
