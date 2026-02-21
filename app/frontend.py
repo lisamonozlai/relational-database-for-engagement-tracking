@@ -179,6 +179,9 @@ if page == "About":
 
         Everything here uses **mock data** and is designed to demonstrate structure, clarity,
         and operational realism.
+
+        For a full walkthrough of the design and implementation, see the project 
+        **[README.md](https://github.com/lisamonozlai/relational-database-for-engagement-tracking)** on Github.
         """
     )
 
