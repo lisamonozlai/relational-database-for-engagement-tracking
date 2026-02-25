@@ -1,13 +1,23 @@
 # Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Streamlit cache
+# Virtual environments
+venv/
+.env/
+
+# Streamlit cache & logs
 .streamlit/
 
-# SQLite journal files (auto-generated)
+# SQLite database artifacts
 *.db-journal
+*.sqlite-journal
 
 # OS-specific clutter
 .DS_Store
 Thumbs.db
+
+# VS Code settings
+.vscode/

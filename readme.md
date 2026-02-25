@@ -1,31 +1,33 @@
-# Building a Lightweight Relational Engagement Tracker with Python, SQL and Streamlit  
+# Engagement Analytics Platform  
+### A lightweight relational database and interactive dashboard built with Python, SQLite, and Streamlit
 ##### Author: [Lisa Monozlai](https://www.linkedin.com/in/lisamonozlai/)
+---
+
+### ▶ **[View Database Demo](https://lisamonozlai-relational-database-demo.streamlit.app/)**
+
+Browse, filter, update, and visualize multi‑year data through a structured interface that protects the integrity of the original source files.
+
 ---
 
 ## About
 
-This project demonstrates how organizations can move from scattered spreadsheets to a lightweight relational database. It shows what becomes possible when engagement data is stored in a structured, queryable format rather than siloed across files.
+This project demonstrates how organizations can transition from fragmented spreadsheets to a structured, queryable relational database system.
 
-All data in this demo is fictional and is used to illustrate:
+Many small and mid-sized teams rely on multi-year Excel files to track engagement data. While familiar, this approach limits visibility, consistency, and analytical insight. This project illustrates what becomes possible when engagement data is unified in a relational database and exposed through an interactive application.
 
-- how relational storage improves consistency  
-- how controlled vocabularies reduce ambiguity  
-- how a simple UI makes structured data accessible to non technical users  
-- how multi year engagement patterns emerge once data is unified  
+All data in this project is fictional and designed to demonstrate:
 
----
-
-## Live Demo
-
-→ **[Click to View](https://relational-database-for-engagement-tracking.streamlit.app/)**
-
-The interface allows users to browse, filter, update, and visualize multi year engagement data without risking accidental edits to the original files.
+- How relational storage improves data integrity and consistency  
+- How controlled vocabularies reduce ambiguity across years  
+- How structured schemas enable reliable filtering and aggregation  
+- How a simple UI makes structured data accessible to non-technical users  
+- How multi-year engagement patterns emerge once data is unified  
 
 ---
 
 ## Challenge
 
-To ground the demo, it uses a fictional scenario where a team wants to understand which organizations they engage with each year. Their data lives in three separate spreadsheets:
+To ground the project, this system models a hypothetical team that wants to understand which organizations they engage with each year. Their data lives in three separate spreadsheets:
 
 - `engagement_data_2022.xlsx`  
 - `engagement_data_2023.xlsx`  
@@ -33,54 +35,109 @@ To ground the demo, it uses a fictional scenario where a team wants to understan
 
 Although the files share similar fields, the team cannot easily:
 
-- view all years together  
-- filter by industry, region, or organization size  
-- compare engagement patterns across years  
-- update records without editing spreadsheets  
-- maintain consistent vocabularies  
+- View all years together  
+- Filter by industry, region, or organization size  
+- Compare engagement patterns across years  
+- Update records without manually editing spreadsheets  
+- Maintain consistent vocabularies across files  
 
-They need a simple, low cost, low maintenance solution that works with familiar tools.
+They need a solution that is low cost, low maintenance, and compatible with familiar workflows.
 
 ---
 
-## Solution
+## Solution Overview
 
-### Tools Used
+This project implements a lightweight engagement analytics platform built with:
 
-- **Python** for cleaning, merging, and standardizing multi year data  
-- **SQLite** as a lightweight relational database  
-- **SQL** for structured storage and reliable queries  
-- **Streamlit** for an intuitive, non technical interface  
-- **Generative AI** (for example, Microsoft Copilot) to accelerate scaffolding and documentation  
+- **Python** for cleaning, merging, and standardizing multi-year data  
+- **SQLite** for relational storage  
+- **SQL** for structured queries and aggregation  
+- **Streamlit** for a non-technical, interactive frontend  
+- **Generative AI tools** (e.g., Microsoft Copilot) for scaffolding and documentation acceleration  
 
-### Backend
+The architectural pattern separates data processing, database logic, and UI rendering to ensure maintainability and clarity.
 
-The backend loads three Excel files, standardizes their fields, and merges them into a single relational table. Each record is tagged with an `engagement_year`, which enables multi year comparisons.
+---
 
-It provides functions for:
+## Repository Structure
 
-- adding, editing, and deleting records  
-- keyword search  
-- structured filtering  
-- generating summary tables  
+This project follows a simple, modular layout:
 
-This structure ensures consistency and reduces the risk of data corruption.
+- **app.py** — Main Streamlit application that renders the interactive UI.  
+- **requirements.txt** — Python dependencies for running the project.  
+- **data/raw/** — Original multi‑year Excel files used as source inputs.  
+- **data/processed/engagement.db** — SQLite database generated after ETL.  
+- **db/schema.sql** — Defines the relational structure of the database.  
+- **db/connection.py** — Creates and manages the SQLite connection.  
+- **db/queries.py** — Parameterized SQL queries for CRUD and filtering.  
+- **scripts/load_data.py** — ETL script that loads and standardizes raw files.  
+- **ui/layout.py** — Page layout and navigation for the Streamlit interface.  
+- **ui/components.py** — Reusable UI elements (tables, forms, filters).  
+- **ui/styles.py** — Centralized styling for consistent presentation.  
+- **utils/helpers.py** — Shared utility functions for cleaning and formatting.  
+- **utils/caching.py** — Lightweight caching to improve app performance.
 
-### Frontend
+---
 
-The Streamlit frontend includes:
+## Backend Design
 
-- a directory of all organizations  
-- keyword search and advanced filters  
-- forms for adding, editing, and deleting records  
-- charts showing engagement patterns by industry and geography  
-- a data dictionary that documents each field and vocabulary  
+The backend performs an ETL-style process:
 
-The UI is intentionally simple so non technical users can interact with the data without touching SQL or the underlying files.
+1. Load multiple Excel files  
+2. Standardize and normalize fields  
+3. Apply controlled vocabularies  
+4. Merge records into a unified relational schema  
+5. Tag each record with `engagement_year` to enable longitudinal analysis  
 
-### Role of Generative AI
+Core functionality includes:
 
-Generative AI supports rapid development by generating boilerplate code, documentation, and UI scaffolding. Because only the structure of the data model is shared and no identifying information is provided, this is a safe and appropriate use of AI.
+- CRUD operations (create, read, update, delete)  
+- Keyword search across structured fields  
+- Multi-field filtering  
+- Summary table generation  
+- Parameterized queries to ensure safe database interaction  
+
+This structure ensures:
+
+- Reduced duplication  
+- Improved consistency  
+- Reliable multi-year comparisons  
+- Clear separation between storage and presentation layers  
+
+---
+
+## Frontend (Streamlit Interface)
+
+The Streamlit application provides:
+
+- A searchable directory of organizations  
+- Advanced filtering by industry, region, geography, and size  
+- Forms for adding, editing, and deleting records  
+- Dynamic charts showing engagement trends  
+- A built-in data dictionary documenting fields and controlled vocabularies  
+
+The interface is intentionally simple to demonstrate how structured backend systems can be made accessible to non-technical users without exposing SQL or raw files.
+
+---
+
+## Analytical Capabilities
+
+Once unified in a relational database, the data supports operational and strategic questions such as:
+
+- Which industries do we engage with most frequently?  
+- How does engagement vary by region or geography?  
+- Are we reaching organizations of different sizes?  
+- Which organizations appear across multiple years?  
+
+These insights are difficult to generate reliably when data is siloed across spreadsheets.
+
+---
+
+## Role of Generative AI
+
+Generative AI tools were used to accelerate boilerplate code generation and documentation. Only schema structure and fictional sample data were used in development.
+
+This project demonstrates responsible AI usage for developer productivity while maintaining data privacy boundaries.
 
 ---
 
@@ -88,38 +145,37 @@ Generative AI supports rapid development by generating boilerplate code, documen
 
 With this system, users can:
 
-- browse all organizations engaged across 2022 to 2024  
-- filter by industry, region, geography, or employee size  
-- run keyword searches across names and descriptions  
-- add, edit, and delete records through controlled forms  
-- view charts that summarize engagement patterns  
-- reference a clear data dictionary  
+- Browse all engagement records across 2022–2024  
+- Filter and search across structured fields  
+- Add, edit, and delete records through validated forms  
+- Visualize engagement patterns via charts  
+- Reference a clear and documented data dictionary  
 
-The structured database also supports common operational questions, such as:
-
-- Which industries do we engage with most often?
-- How does engagement vary by region or geography?  
-- Are we reaching organizations of different sizes?  
-- Which organizations appear across multiple years?  
+The result is a lightweight internal analytics tool that replaces fragmented spreadsheets with a maintainable relational architecture.
 
 ---
 
 ## Considerations and Constraints
 
-This project is a demonstration and represents one approach to working with structured data. It is not intended for sensitive data or enterprise scale use.
+This project is designed as a lightweight internal tool and technical demonstration.
 
-- **SQLite** is suitable for small datasets and single user access, but not concurrent editing  
-- **Streamlit** is ideal for prototypes and internal tools, but does not include authentication  
-- **Generative AI** should not be used to process sensitive organizational data  
+- SQLite is well-suited for small datasets and single-user workflows but not concurrent editing  
+- Streamlit is ideal for prototypes and internal tools but does not include built-in authentication  
+- Generative AI should not be used with sensitive organizational data  
 
-A production ready version might use:
+---
 
-- **PostgreSQL**, **MySQL**, **FastAPI**, or similar tools for teams with technical capacity  
-- **MS SharePoint with Power Apps** or **Google AppSheet** for low code environments  
-- A frontend with authentication and role based permissions  
+## Scaling the Architecture
+
+A production-ready implementation could substitute:
+
+- PostgreSQL or MySQL for multi-user database needs  
+- FastAPI or a similar backend framework for API-based architecture  
+- Authentication and role-based permissions  
 - Cloud hosting with appropriate security controls  
+- Low-code alternatives (e.g., SharePoint + Power Apps or Google AppSheet) for non-technical teams  
 
-The architectural pattern remains the same. Only the tools change.
+The core architectural pattern — ETL + relational schema + controlled vocabularies + UI layer — remains the same. Only the tooling changes.
 
 ---
 
