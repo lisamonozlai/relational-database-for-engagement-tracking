@@ -11,15 +11,15 @@ Browse, filter, update, and visualize multi‑year data through a structured int
 ## Demo Preview
 
 ### Directory View
-A structured table showing all engagement records across years.
+
 ![Directory View](ui/screenshots/directory.png)
 
 ### Overview Dashboard
-A high‑level summary of engagement activity with filters and clean UI components.
+
 ![Overview Dashboard](ui/screenshots/overview.png)
 
 ### Insights & Visualizations
-Charts and aggregated metrics that highlight multi‑year engagement patterns.
+
 ![Insights](ui/screenshots/insights.png)
 
 ---
