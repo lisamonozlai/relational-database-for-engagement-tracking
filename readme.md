@@ -4,7 +4,7 @@
 
 ## ▶ **[View Demo](https://lisamonozlai-interactive-database-demo.streamlit.app/)**
 
-Click the link above to explore the interactive engagement analytics platform. This combines multiple spreadsheets into a single database paired with simple user interface (UI) that makes it easy to browse, filter, update, and visualize data. Previews of the platform's UI and content are available below.
+Click the link above to explore the interactive engagement analytics platform. This platform combines multiple spreadsheets into a **relational database** and simple **user interface** (UI) that makes it easy to browse, filter, update, and visualize data. Previews of the platform's UI and content are available below.
 
 ### Directory Preview
 
