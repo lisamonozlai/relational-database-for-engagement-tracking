@@ -2,23 +2,19 @@
 ##### Author: [Lisa Monozlai](https://www.linkedin.com/in/lisamonozlai/)
 ---
 
-### ▶ **[View Database Demo](https://lisamonozlai-interactive-database-demo.streamlit.app/)**
+## ▶ **[View Demo](https://lisamonozlai-interactive-database-demo.streamlit.app/)**
 
-Browse, filter, update, and visualize multi‑year data through a structured interface that protects the integrity of the original source files.
+Click the link above to explore the interactive engagement analytics platform. This combines multiple spreadsheets into a single database paired with simple user interface (UI) that makes it easy to browse, filter, update, and visualize data. Previews of the platform's UI and content are available below.
 
----
-
-## Demo Preview
-
-### Directory View
+#### Directory Preview
 
 ![Directory View](ui/screenshots/directory.png)
 
-### Overview Dashboard
+### Overview Preview
 
 ![Overview Dashboard](ui/screenshots/overview.png)
 
-### Insights & Visualizations
+### Insights Preview
 
 ![Insights](ui/screenshots/insights.png)
 
