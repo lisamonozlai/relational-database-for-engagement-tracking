@@ -1,5 +1,4 @@
-# Engagement Analytics Platform  
-### A lightweight relational database and interactive dashboard built with Python, SQLite, and Streamlit
+# Engagement Analytics Platform Built With Python, SQLite, and Streamlit
 ##### Author: [Lisa Monozlai](https://www.linkedin.com/in/lisamonozlai/)
 ---
 
@@ -53,70 +52,30 @@ This project implements a lightweight engagement analytics platform built with:
 - **SQLite** for relational storage  
 - **SQL** for structured queries and aggregation  
 - **Streamlit** for a non-technical, interactive frontend  
-- **Generative AI tools** (e.g., Microsoft Copilot) for scaffolding and documentation acceleration  
 
 The architectural pattern separates data processing, database logic, and UI rendering to ensure maintainability and clarity.
 
 ---
 
-## Repository Structure
+## How the System Works (Simple Overview)
 
-This project follows a simple, modular layout:
+This project is organized into a few clear parts that work together to turn raw spreadsheets into an interactive dashboard:
 
-- **app.py** — Main Streamlit application that renders the interactive UI.  
-- **requirements.txt** — Python dependencies for running the project.  
-- **data/raw/** — Original multi‑year Excel files used as source inputs.  
-- **data/processed/engagement.db** — SQLite database generated after ETL.  
-- **db/schema.sql** — Defines the relational structure of the database.  
-- **db/connection.py** — Creates and manages the SQLite connection.  
-- **db/queries.py** — Parameterized SQL queries for CRUD and filtering.  
-- **scripts/load_data.py** — ETL script that loads and standardizes raw files.  
-- **ui/layout.py** — Page layout and navigation for the Streamlit interface.  
-- **ui/components.py** — Reusable UI elements (tables, forms, filters).  
-- **ui/styles.py** — Centralized styling for consistent presentation.  
-- **utils/helpers.py** — Shared utility functions for cleaning and formatting.  
-- **utils/caching.py** — Lightweight caching to improve app performance.
+- **Raw data (`data/raw/`)**  
+  The original Excel files for 2022–2024. These are never edited directly.
 
----
+- **Processing and storage (`scripts/`, `data/processed/`, `db/`)**  
+  A small script loads the spreadsheets, standardizes fields, applies consistent vocabularies, and saves everything into a lightweight SQLite database (`engagement.db`).  
+  The `db` folder contains the database schema and the small set of queries the app uses to search, filter, and update records.
 
-## Backend Design
+- **Application interface (`app.py` and `ui/`)**  
+  Streamlit powers the user-facing dashboard. The `ui` folder defines the layout, reusable components, and visual styling that make the data easy to browse, filter, edit, and visualize.
 
-The backend performs an ETL-style process:
+- **Utilities (`utils/`)**  
+  Small helper functions and caching utilities keep the app fast, clean, and maintainable.
 
-1. Load multiple Excel files  
-2. Standardize and normalize fields  
-3. Apply controlled vocabularies  
-4. Merge records into a unified relational schema  
-5. Tag each record with `engagement_year` to enable longitudinal analysis  
-
-Core functionality includes:
-
-- CRUD operations (create, read, update, delete)  
-- Keyword search across structured fields  
-- Multi-field filtering  
-- Summary table generation  
-- Parameterized queries to ensure safe database interaction  
-
-This structure ensures:
-
-- Reduced duplication  
-- Improved consistency  
-- Reliable multi-year comparisons  
-- Clear separation between storage and presentation layers  
-
----
-
-## Frontend (Streamlit Interface)
-
-The Streamlit application provides:
-
-- A searchable directory of organizations  
-- Advanced filtering by industry, region, geography, and size  
-- Forms for adding, editing, and deleting records  
-- Dynamic charts showing engagement trends  
-- A built-in data dictionary documenting fields and controlled vocabularies  
-
-The interface is intentionally simple to demonstrate how structured backend systems can be made accessible to non-technical users without exposing SQL or raw files.
+Together, these pieces create a simple pipeline:  
+**spreadsheets → cleaned database → interactive dashboard**.
 
 ---
 
@@ -130,14 +89,6 @@ Once unified in a relational database, the data supports operational and strateg
 - Which organizations appear across multiple years?  
 
 These insights are difficult to generate reliably when data is siloed across spreadsheets.
-
----
-
-## Role of Generative AI
-
-Generative AI tools were used to accelerate boilerplate code generation and documentation. Only schema structure and fictional sample data were used in development.
-
-This project demonstrates responsible AI usage for developer productivity while maintaining data privacy boundaries.
 
 ---
 
