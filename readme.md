@@ -97,7 +97,6 @@ Once unified in a relational database, the data supports operational and strateg
 
 - Which industries do we engage with most frequently?  
 - How does engagement vary by region or geography?  
-- Are we reaching organizations of different sizes?  
 - Which organizations appear across multiple years?  
 
 These insights are difficult to generate reliably when data is siloed across spreadsheets.
@@ -138,7 +137,7 @@ A production-ready implementation could substitute:
 - Cloud hosting with appropriate security controls  
 - Low-code alternatives (e.g., SharePoint + Power Apps or Google AppSheet) for non-technical teams  
 
-The core architectural pattern — ETL + relational schema + controlled vocabularies + UI layer — remains the same. Only the tooling changes.
+The core architectural pattern (ETL + relational schema + controlled vocabularies + UI layer) remains the same. Only the tooling changes.
 
 ---
 
