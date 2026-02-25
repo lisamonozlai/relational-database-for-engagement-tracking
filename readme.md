@@ -1,10 +1,26 @@
-# Engagement Analytics Platform Built With Python, SQLite, and Streamlit
+# Engagement Analytics Platform Built with Python, SQLite, and Streamlit
 ##### Author: [Lisa Monozlai](https://www.linkedin.com/in/lisamonozlai/)
 ---
 
-### ▶ **[View Database Demo](https://lisamonozlai-relational-database-demo.streamlit.app/)**
+### ▶ **[View Database Demo](https://lisamonozlai-interactive-database-demo.streamlit.app/)**
 
 Browse, filter, update, and visualize multi‑year data through a structured interface that protects the integrity of the original source files.
+
+---
+
+## Demo Preview
+
+### Directory View
+A structured table showing all engagement records across years.
+![Directory View](ui/screenshots/directory.png)
+
+### Overview Dashboard
+A high‑level summary of engagement activity with filters and clean UI components.
+![Overview Dashboard](ui/screenshots/overview.png)
+
+### Insights & Visualizations
+Charts and aggregated metrics that highlight multi‑year engagement patterns.
+![Insights](ui/screenshots/insights.png)
 
 ---
 
@@ -57,21 +73,21 @@ The architectural pattern separates data processing, database logic, and UI rend
 
 ---
 
-## How the System Works (Simple Overview)
+## How the System Works
 
 This project is organized into a few clear parts that work together to turn raw spreadsheets into an interactive dashboard:
 
-- **Raw data (`data/raw/`)**  
+- **Raw data** (`data/raw/`)  
   The original Excel files for 2022–2024. These are never edited directly.
 
-- **Processing and storage (`scripts/`, `data/processed/`, `db/`)**  
+- **Processing and storage** (`scripts/`, `data/processed/`, `db/`)  
   A small script loads the spreadsheets, standardizes fields, applies consistent vocabularies, and saves everything into a lightweight SQLite database (`engagement.db`).  
   The `db` folder contains the database schema and the small set of queries the app uses to search, filter, and update records.
 
-- **Application interface (`app.py` and `ui/`)**  
+- **Application interface** (`app.py` and `ui/`)  
   Streamlit powers the user-facing dashboard. The `ui` folder defines the layout, reusable components, and visual styling that make the data easy to browse, filter, edit, and visualize.
 
-- **Utilities (`utils/`)**  
+- **Utilities** (`utils/`)  
   Small helper functions and caching utilities keep the app fast, clean, and maintainable.
 
 Together, these pieces create a simple pipeline:  
