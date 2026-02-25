@@ -50,6 +50,7 @@ def render_about_page():
         and operational realism. For a full walkthrough of the design and implementation, see the project **[README.md](https://github.com/lisamonozlai/relational-database-for-engagement-tracking)** on GitHub.
 
         **About Me**
+        
         I’m a program management, operations, and data professional focused on strengthening 
         information flows and improving decision‑making for mission‑driven teams. Learn more about my work or 
         connect with me here: [LinkedIn](https://www.linkedin.com/in/lisamonozlai) | [GitHub](https://github.com/lisamonozlai) | [Website](https://lisamonozlai.github.io)
